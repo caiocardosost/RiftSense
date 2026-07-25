@@ -30,8 +30,10 @@ The dataset is composed of Brazilian Portuguese Twitter interactions manually an
 6. Model training
 7. Evaluation
 
-About the directories
-RiftSense
+About the directories:
 
+```
+RiftSense
 ├── development/ → notebooks, experiments, and development documentation
-└── app/         → application ready to run the trained model
+└── Riftsense-BERTimbau/ → application ready to run the trained model
+```
