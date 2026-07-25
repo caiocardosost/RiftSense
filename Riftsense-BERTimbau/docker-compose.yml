@@ -1,0 +1,26 @@
+services:
+  # Define um serviço (container) chamado "riftsense"
+  riftsense:
+    # Constrói a imagem utilizando o Dockerfile localizado
+    # no diretório atual (".")
+    build: .
+    # Nome da imagem que será criada
+    image: riftsense:latest
+    # Nome do container em execução
+    container_name: riftsense
+    # Mantém a entrada padrão (stdin) aberta,
+    # permitindo utilizar input() no Python
+    stdin_open: true
+    # Aloca um terminal (TTY), necessário para interação
+    # via linha de comando
+    tty: true
+    
+    # Mapeamento de volumes entre o host e o container
+    # Para permitir persistencia (modelo baixado fica salvo)
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+      - huggingface_cache:/root/.cache/huggingface
+# Declaração dos volumes nomeados utilizados pelos serviços
+volumes:
+  huggingface_cache:

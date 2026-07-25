@@ -1,0 +1,7 @@
+torch
+transformers
+huggingface_hub
+pandas
+numpy
+sentencepiece
+safetensors
