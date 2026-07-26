@@ -2,24 +2,50 @@
 
 RiftSense é um detector de conflitos em pares de tweets em português, desenvolvido a partir do modelo **BERTimbau Base** ajustado para a tarefa de classificação binária de conflitos.
 
-O modelo treinado está hospedado no Hugging Face e é baixado automaticamente durante a primeira execução da aplicação.
+# Tecnologias utilizadas
+
+- Python 3.12
+- PyTorch
+- Hugging Face Transformers
+- Hugging Face Hub
+- Pandas
+- Docker
+- Docker Compose
+- BERTimbau Base
+
+# Modelo treinado
+
+O modelo utilizado pelo RiftSense está hospedado no Hugging Face e é carregado automaticamente durante a primeira execução da aplicação.
+
+Repositório do modelo:
+
+https://huggingface.co/caiocardosost/RiftSense-BERTimbau-Base
 
 ---
 
 # Estrutura do projeto
 
-```
+```text
 .
-├── app/                 # Código da aplicação
-├── scripts/             # Scripts de execução
-├── input/               # Arquivos de entrada
-├── output/              # Resultados gerados
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
+├── app/
+│   ├── config.py              # Configurações globais do projeto
+│   ├── dataset_predictor.py   # Predição em datasets
+│   ├── model_loader.py        # Carregamento do modelo e tokenizer
+│   └── predictor.py           # Modulo preditor principal
+│
+├── input/                     # Arquivos de entrada (CSV)
+│
+├── output/                    # Arquivos gerados pela aplicação
+│
+├── scripts/
+│   ├── predict_dataset.py     # Executa a classificação de um dataset
+│   └── predict_pair.py        # Executa a classificação de um par de tweets
+│
+├── Dockerfile                 # Definição da imagem Docker
+├── docker-compose.yml         # Configuração dos serviços Docker Compose
+├── requirements.txt           # Dependências do projeto
+└── README.md                  # Documentação
 ```
-
 ---
 
 # Requisitos
